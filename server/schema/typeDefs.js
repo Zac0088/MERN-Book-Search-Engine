@@ -16,4 +16,32 @@ type Book {
     title: String!
     image: String!
     link: String!
-}`
+}
+
+input BookInput {
+    bookId: String!
+    authors: [String]
+    description: String
+    title: String!
+    image: String!
+    link: String!
+}
+
+type Query {
+    users: [User]
+    me: User
+}
+
+type Auth {
+    token: ID!
+    user: User
+}
+
+type Mutation {
+    addUser(username: string!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    saveBook(book: BookInput): User
+    removeBook(bookId: String!): User
+}
+`;
+module.exports = typeDefs;
