@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
 // import { getMe, deleteBook } from '../utils/API';
@@ -10,6 +10,7 @@ import { REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
   const {loading, data} = useQuery(GET_ME);
+  // eslint-disable-next-line
   const [removeBook, {error}] = useMutation(REMOVE_BOOK);
   const userData =data?.me || [];
 
@@ -21,6 +22,7 @@ const SavedBooks = () => {
     }
 
     try {
+      // eslint-disable-next-line
       const {data} = await removeBook({
         variables: { bookId }
       });
