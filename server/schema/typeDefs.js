@@ -10,21 +10,21 @@ type User {
 }
 
 type Book {
-    bookId: String!
+    bookId: ID!
     authors: [String]
     description: String
     title: String!
-    image: String!
-    link: String!
+    image: String
+    link: String
 }
 
 input BookInput {
     bookId: String!
     authors: [String]
-    description: String
+    description: String!
     title: String!
-    image: String!
-    link: String!
+    image: String
+    link: String
 }
 
 type Query {
